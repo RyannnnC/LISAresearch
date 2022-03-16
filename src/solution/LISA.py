@@ -124,6 +124,7 @@ class LISA():
     def shards_layout(pred_idxes, N):
         pred_idxes = (pred_idxes / N).astype(np_idx_type())
         max_shard_id = pred_idxes.max()
+        print 'id = ',max_shard_id
         pred_idxes = np.clip(pred_idxes, a_min=0, a_max=max_shard_id)
         entries_count = [0] * (max_shard_id + 1)
         for i in range(pred_idxes.shape[0]):
@@ -134,6 +135,7 @@ class LISA():
         if n_entries_last_page < N:
             max_shard_id -= 1
             while True:
+                print 'loop id = ',max_shard_id
                 n_entries_last_page += entries_count[max_shard_id]
                 if n_entries_last_page > N:
                     break

@@ -47,7 +47,7 @@ class Config(object):
             self.tau = 50  # number of nodes in each dim
 
             data_name = str(self.data_dim) + 'd_uniform'
-            self.home_dir = os.path.join('F:\Github\LISA', data_name)
+            self.home_dir = os.path.join('F:\Github\LISAresearch', data_name)
             self.models_dir = os.path.join(self.home_dir, 'models')
             self.data_dir = os.path.join(self.home_dir, 'data')
             # self.logs_dir = os.path.join(self.home_dir, logs_dir)
